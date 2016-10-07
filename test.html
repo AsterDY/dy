@@ -1,0 +1,27 @@
+﻿<!DOCTYPE html>
+  <head>
+    <meta name="content-type" content="text/html;charset=UTF-8">
+    
+    <script type='text/javascript' src="magnifier.js"></script>
+    
+    <title>test</title>
+	<style>
+		#picture,#picture img{
+			width:350px;
+			height:500px;
+		}
+	
+	</style>
+	
+  </head>
+  
+  <body>
+	<div id="picture">
+		<img src="dy.png"/>
+	</div>
+  </body>
+  <script>
+  		var mag = new Magnifier({"container":"picture","image":"dy.png"});
+  		mag.open();
+  	</script>
+</html>
