@@ -2,16 +2,16 @@
   <head>
     <meta name="content-type" content="text/html;charset=UTF-8">
     
-    <script type='text/javascript' src="magnifier.js"></script>
     
-    <title>test</title>
-	<style>
+    <style>
 		#picture,#picture img{
 			width:350px;
 			height:500px;
 		}
 	
 	</style>
+    <title>test</title>
+	
 	
   </head>
   
@@ -20,8 +20,11 @@
 		<img src="dy.png"/>
 	</div>
   </body>
-  <script>
-  		var mag = new Magnifier({"container":"picture","image":"dy.png"});
-  		mag.open();
-  	</script>
+
+  <script type="text/javascript" src="magnifier.js"></script>
+	<script type="text/javascript">
+		var mag = new Magnifier({"container":"picture","image":"dy.png"});
+	mag.open();
+	</script>
+
 </html>

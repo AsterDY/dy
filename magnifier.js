@@ -19,7 +19,7 @@
 	}
 	
 	//定义类构造函数magnifier
-	var magnifier = function(options){
+	var Magnifier = function(options){
 		//传入默认设置参数
 		this.settings = defaults;
 		//合并用户设置参数
@@ -34,7 +34,7 @@
 		this.init();
 	}
 	
-	magnifier.prototype = {
+	Magnifier.prototype = {
 		//插件初始化函数
 		init:function(){
 			//获取显示所需环境元素
@@ -44,7 +44,6 @@
 				this.ctx = this.can.getContext("2d");
 				this.img = this.createImg(this.settings["image"]);	
 			}
-			
 		},
 		//绘图canvas容器生成函数
 		createCan:function(con){
@@ -71,7 +70,7 @@
 				var rX = self.can.width*0.5/zoom, rY = self.can.height*0.5/zoom;
 				var oWidth = self.img.width, oHeight = self.img.height;
 				var ratioX = oWidth/self.con.offsetWidth, ratioY = oHeight/self.con.offsetHeight;
-				alert(zoom+" "+rX+" "+oWidth+" "+ratioX);
+				console.log(zoom+" "+rX+" "+oWidth+" "+ratioX);
 				//注册图片容器的mousemove事件
 				self.con.onmousemove = function(e){
 					//计算鼠标相对图片位置
@@ -85,7 +84,7 @@
 						self.can.style.display = "block";
 					}else{
 						//隐藏canvas
-						self.can.style.display = "none";
+						//self.can.style.display = "none";
 					}
 				};
 				//注册图片容器的mouseleave事件
@@ -105,11 +104,11 @@
 			this.settings = null;
 			this.con = this.can = this.ctx = this.img = null;
 		}
-	}
+	};
 	
 	//向window对象注册类构造函数Magnifier（）
  	win.Magnifier = function(options){
- 		return new magnifier(options);
+ 		return new Magnifier(options);
  	}
 
 })(window);
